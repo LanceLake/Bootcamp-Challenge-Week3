@@ -29,16 +29,13 @@ function writePassword() {
 	if (special) {masterList = masterList + specialList;}
 	if (numbers) {masterList = masterList + numberList;}
 
-	var Password = "";
+	var fullPassword = "";
 
 	for (var i = 0; i < totalsize; i++) {
-		password += masterList.charAt(Math.floor(Math.random() * masterList.length));
+		fullPassword += masterList.charAt(Math.floor(Math.random() * masterList.length));
 	}
 
-console.log(password);
-
-
-	document.getElementById("passwordDisplay").value = password;
+	document.getElementById("passwordDisplay").value = fullPassword;
 
 	document.getElementById("options").style.display = "none";
 	document.getElementById("password").style.display = "block";
