@@ -10,7 +10,18 @@ function writePassword() {
 	var uppercase = document.getElementById("uppercase").checked;
 	var numbers = document.getElementById("numbers").checked;
 	var special = document.getElementById("special").checked;
-	var totalsize = sizemax - sizemin;
+	var totalsize;
+	
+	
+	do 
+	{
+		totalsize = Math.floor(Math.random() * sizemax);	
+	}
+	while (totalsize < sizemin);
+
+	console.log(sizemax);
+	console.log(sizemin);
+	console.log(totalsize);
 
 	if (sizemin < 8) {alert("Your minimum size needs to be 8 or higher");return false;}
 	if (sizemax > 128) {alert("Your maxium size needs to be 128 or lower");return false;}
